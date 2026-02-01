@@ -2,5 +2,11 @@
 layout: default
 title: Kezdőlap
 ---
-<h2>Üdvözöljük az iskola honlapján!</h2>
-<p>Ez itt a főoldal tartalma.</p>
+<h2>Legfrissebb híreink</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y. %m. %d." }} - {{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
